@@ -1,18 +1,6 @@
 from dataclasses import dataclass
 from collections import namedtuple
-import urllib3
 import homeassistant_api as ha
-
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-
-COLORS = {
-    'chill_evening': [255,220,180],
-    'pure_white': [255] * 3,
-    'red': [255, 0, 0],
-    'green': [0, 255, 0],
-    'blue': [0, 0, 255],
-}
-Colors = namedtuple('Colors', COLORS.keys())(*COLORS.values())
 
 
 @dataclass
