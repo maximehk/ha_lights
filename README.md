@@ -30,9 +30,12 @@ COLORS = {
 }
 Colors = namedtuple('Colors', COLORS.keys())(*COLORS.values())
 
-
+# Turn on a specific light with optional brightness and color settings
 lights.living_room_tripod.turn_on(brightness=255, rgb_color=Colors.chill_evening)
 
+# Create an entity group and use it to control lights
+living_room = EntityGroup([lights.living_room_tripod, switches.lr_smart_plug])
+living_room.toggle()
 ```
 
 ## Optionally (if you have an invalid cert)
