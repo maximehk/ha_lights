@@ -28,7 +28,8 @@ COLORS = {
     'pure_white': [255, 255, 255],
     'red': [255, 0, 0],
 }
-Colors = namedtuple('Colors', COLORS.keys())(*COLORS.values())
+Colors = namedtuple('Colors', COLORS)(**COLORS)
+
 
 # Turn on a specific light with optional brightness and color settings
 lights.living_room_tripod.turn_on(brightness=255, rgb_color=Colors.chill_evening)
