@@ -25,7 +25,7 @@ lights,switches = factory.AllLights(), factory.AllSwitches()
 
 COLORS = {
     'chill_evening': [255,220,180],
-    'pure_white': [255] * 3,
+    'pure_white': [255, 255, 255],
     'red': [255, 0, 0],
 }
 Colors = namedtuple('Colors', COLORS.keys())(*COLORS.values())
@@ -33,7 +33,7 @@ Colors = namedtuple('Colors', COLORS.keys())(*COLORS.values())
 # Turn on a specific light with optional brightness and color settings
 lights.living_room_tripod.turn_on(brightness=255, rgb_color=Colors.chill_evening)
 
-# Create an entity group and use it to control lights
+# Create an entity group and use it to control lights and switches with a single API
 living_room = EntityGroup([lights.living_room_tripod, switches.lr_smart_plug])
 living_room.toggle()
 ```
