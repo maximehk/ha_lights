@@ -9,7 +9,7 @@ Relies on dataclasses and namedtuples to provide auto-completion for interactive
 Install homeassistant-api
 
 ```shell
-pip install 'homeassistant_api==4.0.0.post2'
+pip install 'homeassistant_api>=4.0.0.post2'
 ```
 
 ## Sample use
@@ -33,5 +33,14 @@ Colors = namedtuple('Colors', COLORS.keys())(*COLORS.values())
 
 lights.living_room_tripod.turn_on(brightness=255, rgb_color=Colors.chill_evening)
 
+```
 
+## Optionally (if you have an invalid cert)
+
+```python
+import urllib3
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+client = ha.Client(URL, TOKEN, global_request_kwargs={'verify': False})
 ```
