@@ -45,6 +45,8 @@ class Switch(BaseEntity):
     pass
 
 
+
+# TODO: use async
 @dataclass
 class EntityGroup:
     entities: list[BaseEntity]
