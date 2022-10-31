@@ -6,20 +6,21 @@ Relies on dataclasses and namedtuples to provide auto-completion for interactive
 
 ## Requirements
 
-Install homeassistant-api
+Install the package with pip
 
 ```shell
-pip install 'homeassistant_api>=4.0.0.post2'
+pip install 'home-assistant-lights'
 ```
 
 ## Sample use
 
 ```python
 import homeassistant_api as ha
+import ha_lights
 from collections import namedtuple
 
 client = ha.Client(URL, TOKEN)
-factory = Factory(client)
+factory = ha_lights.Factory(client)
 lights,switches = factory.AllLights(), factory.AllSwitches()
 
 
