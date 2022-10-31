@@ -83,10 +83,10 @@ class Factory:
         return Light(self.light_domain, self.client.get_entity(entity_id=f'light.{entity_slug}'))
     
     def AllLights(self):
-        light_ids = client.get_entities()['light'].entities.keys()
-        return namedtuple('Lights', light_ids)(*[factory.MakeLight(x) for x in light_ids])
+        lights = self.client.get_entities()['light'].entities
+        return namedtuple('Lights', lights)(**lights)
 
     def AllSwitches(self):
-        switch_ids = client.get_entities()['switch'].entities.keys()
-        return namedtuple('Switches', switch_ids)(*[factory.MakeSwitch(x) for x in switch_ids])
+        switches = self.client.get_entities()['switch'].entities
+        return namedtuple('Switches', switches)(**switches)
     
