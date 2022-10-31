@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
         name='home assistant lights',  
-        version='0.0.4',
+        version='0.0.5-1',
         author="Maxime",
         author_email="",
         description="Simple python library to control lights and switches in Home Assistant..",

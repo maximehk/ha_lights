@@ -84,9 +84,9 @@ class Factory:
     
     def AllLights(self):
         lights = self.client.get_entities()['light'].entities
-        return namedtuple('Lights', lights)(**lights)
+        return namedtuple('Lights', lights)(*[Light(self.light_domain, x) for x in lights.values()])
 
     def AllSwitches(self):
         switches = self.client.get_entities()['switch'].entities
-        return namedtuple('Switches', switches)(**switches)
+        return namedtuple('Switches', switches)(*[Switch(self.switch_domain, x) for x in switches.values()])
     
