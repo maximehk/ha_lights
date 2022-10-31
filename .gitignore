@@ -1,0 +1,6 @@
+__pycache__
+.vscod
+build
+dist
+*.egg-info
+**/*.egg-info
